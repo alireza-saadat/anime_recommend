@@ -3,20 +3,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eaf6ff">
 <title>Anime Atlas | Discover Your Next Anime</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #090914;
-  --panel: #121221;
-  --muted: #9292ad;
-  --purple: #a78bfa;
-  --pink: #f472b6;
-  --border: rgba(255,255,255,.09);
+  --sky: #eaf6ff;
+  --blue: #258bd0;
+  --deep: #155b91;
+  --ink: #183b56;
+  --muted: #64839a;
+  --line: #d7eaf7;
+  --white: #fff;
+  --soft: #f5fbff;
+  --shadow: 0 22px 65px rgba(54,130,180,.13);
 }
 
 * { box-sizing: border-box; }
@@ -24,12 +29,12 @@
 body {
   margin: 0;
   min-height: 100vh;
+  color: var(--ink);
+  font-family: 'Outfit', system-ui, sans-serif;
   background:
-    radial-gradient(ellipse at 10% 0%, #26143d 0%, transparent 40%),
-    radial-gradient(ellipse at 100% 80%, #17123a 0%, transparent 40%),
-    var(--bg);
-  color: #f5f3ff;
-  font-family: 'Outfit', sans-serif;
+    radial-gradient(ellipse at 8% 0%, #cceaff 0, transparent 35%),
+    radial-gradient(ellipse at 95% 55%, #d9f0ff 0, transparent 36%),
+    linear-gradient(180deg, #f4fbff, #eaf6ff 65%, #f8fcff);
 }
 
 button { font: inherit; }
@@ -43,56 +48,60 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(75,145,190,.18);
 }
 
 .logo {
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: -1px;
+  color: var(--deep);
 }
 
-.logo span { color: var(--purple); }
+.logo span { color: #55a9e5; }
 
 .header-tag {
+  font-size: 12px;
   color: var(--muted);
-  font-size: 13px;
-  border: 1px solid var(--border);
-  padding: 9px 14px;
+  background: #ffffffb8;
+  border: 1px solid var(--line);
+  padding: 9px 15px;
   border-radius: 30px;
 }
 
 .hero {
   text-align: center;
-  padding: 70px 0 42px;
+  padding: 65px 0 38px;
 }
 
 .eyebrow {
-  color: var(--pink);
-  font-size: 12px;
-  font-weight: 700;
+  color: #398fc8;
+  font-size: 11px;
+  font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: clamp(38px, 6vw, 68px);
+  font-size: clamp(38px, 6vw, 66px);
   line-height: 1.08;
-  margin: 18px 0;
+  margin: 17px 0;
   letter-spacing: -2px;
+  color: #174e78;
 }
 
 h1 span {
-  background: linear-gradient(100deg, var(--purple), var(--pink));
+  background: linear-gradient(100deg, #3299dc, #76c4ef);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
 .hero p {
   color: var(--muted);
-  font-size: 16px;
-  max-width: 530px;
+  font-size: 15px;
+  max-width: 550px;
   line-height: 1.8;
   margin: 0 auto;
 }
@@ -100,55 +109,59 @@ h1 span {
 .anime-card {
   display: grid;
   grid-template-columns: 330px 1fr;
-  gap: 40px;
-  padding: 30px;
-  background: rgba(18,18,33,.86);
-  border: 1px solid var(--border);
-  border-radius: 26px;
-  box-shadow: 0 30px 100px rgba(0,0,0,.25);
-  backdrop-filter: blur(20px);
+  gap: 38px;
+  padding: 28px;
+  background: #ffffffd9;
+  border: 1px solid #fff;
+  border-radius: 27px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
 }
 
 .poster-wrap {
   position: relative;
-  min-height: 450px;
+  min-height: 460px;
   overflow: hidden;
-  border-radius: 18px;
-  background: #201b35;
+  border-radius: 19px;
+  background: linear-gradient(145deg, #b9e2fb, #e5f5ff);
+  box-shadow: 0 12px 32px #4b9ac522;
 }
 
 .poster {
   width: 100%;
   height: 100%;
-  min-height: 450px;
+  min-height: 460px;
   object-fit: cover;
   display: block;
-  transition: transform .6s ease;
+  transition: transform .55s;
 }
 
-.poster-wrap:hover .poster { transform: scale(1.04); }
+.poster-wrap:hover .poster {
+  transform: scale(1.04);
+}
 
 .poster-overlay {
   position: absolute;
-  inset: 50% 0 0;
-  background: linear-gradient(transparent, rgba(8,8,18,.65));
+  inset: 55% 0 0;
+  background: linear-gradient(transparent, rgba(12,54,83,.6));
   pointer-events: none;
 }
 
 .poster-label {
   position: absolute;
-  bottom: 18px;
-  left: 18px;
-  background: rgba(10,10,20,.7);
-  border: 1px solid rgba(255,255,255,.2);
+  bottom: 17px;
+  left: 17px;
+  color: #fff;
+  background: #174e78bb;
+  border: 1px solid #ffffff66;
   border-radius: 30px;
   padding: 8px 13px;
-  font-size: 12px;
-  backdrop-filter: blur(10px);
+  font-size: 11px;
+  backdrop-filter: blur(8px);
 }
 
 .content {
-  padding: 8px 0;
+  padding: 7px 0;
   min-width: 0;
 }
 
@@ -157,75 +170,78 @@ h1 span {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 18px;
+  margin-bottom: 17px;
 }
 
 .tag {
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--purple);
-  background: rgba(167,139,250,.1);
+  font-weight: 700;
+  color: #247cb7;
+  background: #e5f4ff;
   padding: 7px 11px;
   border-radius: 8px;
 }
 
 .rating {
-  color: #fbbf24;
+  color: #d58b18;
   font-size: 13px;
+  font-weight: 600;
 }
 
 h2 {
   font-size: clamp(28px, 4vw, 42px);
   line-height: 1.15;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
+  color: #174e78;
   letter-spacing: -1px;
 }
 
 .meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
 .meta span {
-  color: #c4c4d9;
-  background: rgba(255,255,255,.045);
-  border: 1px solid var(--border);
+  color: #52758d;
+  background: #f1f9ff;
+  border: 1px solid #e0eff9;
   border-radius: 8px;
-  padding: 8px 11px;
-  font-size: 12px;
+  padding: 8px 10px;
+  font-size: 11px;
 }
 
 .synopsis {
-  color: #b8b8ce;
+  color: #55758b;
   font-size: 14px;
   line-height: 1.9;
-  margin: 0 0 28px;
+  margin: 0 0 25px;
 }
 
 .facts-title {
   font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 14px;
+  font-weight: 800;
+  margin-bottom: 13px;
   display: flex;
   align-items: center;
   gap: 9px;
+  color: #245c82;
 }
 
-.facts-title span { color: var(--pink); }
+.facts-title span { color: #42a2dc; }
 
 .facts {
   display: grid;
-  gap: 11px;
+  gap: 10px;
 }
 
 .fact {
   display: flex;
-  gap: 13px;
+  gap: 12px;
   align-items: flex-start;
-  color: #c8c8dc;
+  color: #496c84;
   font-size: 13px;
   line-height: 1.65;
 }
@@ -236,74 +252,68 @@ h2 {
   height: 25px;
   display: grid;
   place-items: center;
-  color: var(--purple);
-  background: rgba(167,139,250,.1);
+  color: #247cb7;
+  background: #e5f4ff;
   border-radius: 8px;
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 800;
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .discover {
   border: 0;
   color: white;
   font-weight: 700;
-  padding: 16px 25px;
+  padding: 15px 23px;
   border-radius: 12px;
   cursor: pointer;
-  background: linear-gradient(110deg, #8b5cf6, #ec4899);
-  box-shadow: 0 8px 30px rgba(168,85,247,.2);
+  background: linear-gradient(110deg, #278bd0, #62b9e9);
+  box-shadow: 0 8px 24px #3297d333;
   transition: transform .2s, box-shadow .2s;
 }
 
 .discover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(168,85,247,.35);
-}
-
-.discover:disabled {
-  opacity: .6;
-  cursor: wait;
-  transform: none;
+  box-shadow: 0 12px 28px #3297d355;
 }
 
 .secondary {
-  background: transparent;
-  color: #c4c4d9;
-  border: 1px solid var(--border);
+  background: #fff;
+  color: #39769d;
+  border: 1px solid #d6eaf7;
   border-radius: 12px;
-  padding: 15px 20px;
+  padding: 14px 19px;
   cursor: pointer;
 }
 
-.secondary:hover { background: rgba(255,255,255,.05); }
+.secondary:hover { background: #f2f9ff; }
 
 .status {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 16px;
+  color: #7290a4;
+  font-size: 11px;
+  margin-top: 14px;
   min-height: 18px;
 }
 
 footer {
   text-align: center;
-  padding: 40px 0 30px;
-  color: #66667f;
-  font-size: 12px;
+  padding: 35px 0 28px;
+  color: #7c9bb0;
+  font-size: 11px;
 }
 
-@media (max-width: 800px) {
+@media(max-width:800px) {
   .anime-card {
     grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 18px;
+    gap: 23px;
+    padding: 17px;
   }
 
   .poster-wrap {
@@ -315,310 +325,400 @@ footer {
 
   .poster {
     min-height: 0;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 3/4;
   }
 
   .content { padding: 5px; }
-  .hero { padding: 55px 0 35px; }
+  .hero { padding: 48px 0 30px; }
 }
 
-@media (max-width: 420px) {
+@media(max-width:420px) {
   .header-tag { display: none; }
   h1 { letter-spacing: -1px; }
-  .actions { flex-direction: column; align-items: stretch; }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .discover, .secondary { width: 100%; }
 }
 </style>
 </head>
 
 <body>
+
 <header class="container">
   <div class="logo">ANIME<span>ATLAS</span></div>
-  <div class="header-tag">Your next anime awaits ✦</div>
+  <div class="header-tag">A little world of anime ☁</div>
 </header>
 
 <main class="container">
-  <section class="hero">
-    <div class="eyebrow">A universe of stories</div>
-    <h1>Discover your next<br><span>anime obsession.</span></h1>
-    <p>
-      One click. One new world.
-      Explore incredible anime, uncover hidden details,
-      and find your next favorite story.
-    </p>
-  </section>
 
-  <section class="anime-card" aria-live="polite">
-    <div class="poster-wrap">
-      <img id="poster" class="poster"
-           src="https://placehold.co/600x800/171327/a78bfa?text=Anime+Atlas"
-           alt="Anime cover">
-      <div class="poster-overlay"></div>
-      <div class="poster-label">✦ YOUR NEXT ADVENTURE</div>
+<section class="hero">
+  <div class="eyebrow">✦ A universe of stories ✦</div>
+  <h1>Find your next<br><span>anime adventure.</span></h1>
+  <p>
+    One click. One new world. Discover a hand-picked anime,
+    explore its story, and uncover five details worth knowing.
+  </p>
+</section>
+
+<section class="anime-card" aria-live="polite">
+
+  <div class="poster-wrap">
+    <img
+      id="poster"
+      class="poster"
+      src="https://cdn.myanimelist.net/images/anime/9/9453.jpg"
+      alt="Anime cover"
+    >
+    <div class="poster-overlay"></div>
+    <div class="poster-label">✦ YOUR NEXT ADVENTURE</div>
+  </div>
+
+  <div class="content">
+
+    <div class="topline">
+      <span class="tag" id="type">FEATURED ANIME</span>
+      <span class="rating" id="rating">★ 8.62 / 10</span>
     </div>
 
-    <div class="content">
-      <div class="topline">
-        <span class="tag" id="type">DISCOVER</span>
-        <span class="rating" id="rating">★ --</span>
-      </div>
+    <h2 id="title">Death Note</h2>
 
-      <h2 id="title">Ready for a new adventure?</h2>
+    <div class="meta" id="meta"></div>
 
-      <div class="meta" id="meta">
-        <span>Explore the anime universe</span>
-      </div>
+    <p class="synopsis" id="synopsis"></p>
 
-      <p class="synopsis" id="synopsis">
-        Click the button below to discover a random anime
-        and learn five interesting facts about it.
-      </p>
-
-      <div class="facts-title"><span>✦</span> Five Things Worth Knowing</div>
-      <div class="facts" id="facts">
-        <div class="fact">
-          <div class="fact-number">01</div>
-          <div>Your next favorite anime could be one click away.</div>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button class="discover" id="discover">
-          ✦ Discover Another Anime
-        </button>
-        <button class="secondary" id="surprise">Surprise Me ↗</button>
-      </div>
-
-      <div class="status" id="status">
-        Powered by the Jikan anime database.
-      </div>
+    <div class="facts-title">
+      <span>✦</span> Five Things Worth Knowing
     </div>
-  </section>
+
+    <div class="facts" id="facts"></div>
+
+    <div class="actions">
+      <button class="discover" id="discover">
+        ✦ Discover Another Anime
+      </button>
+
+      <button class="secondary" id="surprise">
+        Surprise Me ↗
+      </button>
+    </div>
+
+    <div class="status" id="status">
+      Ready when you are — no external database required.
+    </div>
+
+  </div>
+</section>
+
 </main>
 
 <footer class="container">
-  ANIME ATLAS · Made for anime lovers everywhere
+  ANIME ATLAS · Made for anime lovers everywhere ☁
 </footer>
 
 <script>
-const $ = id => document.getElementById(id);
 
-let currentAnime = null;
-let lastAnimeId = null;
-let requestNumber = 0;
+const animeList = [
 
-const fallbackFacts = [
-  "Its story is part of the ever-growing world of Japanese animation.",
-  "Its genres can help you discover other anime with a similar vibe.",
-  "Its original source can reveal how the story was first created.",
-  "Its production studio has its own approach to animation.",
-  "Its release year places it in a particular era of anime history."
+{
+title:"Death Note",
+year:2006,
+type:"TV",
+episodes:37,
+score:"8.62",
+genres:"Supernatural · Suspense",
+image:"https://cdn.myanimelist.net/images/anime/9/9453.jpg",
+synopsis:"A brilliant student discovers a mysterious notebook that grants its user the power to kill anyone whose name is written in it.",
+facts:[
+"The series is adapted from the manga written by Tsugumi Ohba and illustrated by Takeshi Obata.",
+"The story follows a battle of strategy between Light Yagami and the detective known as L.",
+"The anime was produced by Madhouse.",
+"The original television series contains 37 episodes.",
+"The story explores justice, morality, power, and the consequences of absolute authority."
+]
+},
+
+{
+title:"Attack on Titan",
+year:2013,
+type:"TV",
+episodes:25,
+score:"8.54",
+genres:"Action · Drama · Fantasy",
+image:"https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+synopsis:"Humanity fights for survival behind enormous walls after gigantic humanoid Titans threaten the last human settlements.",
+facts:[
+"Based on the manga by Hajime Isayama.",
+"The first season premiered in April 2013.",
+"WIT Studio animated the first three seasons.",
+"The series is known for its mysteries and major plot revelations.",
+"Its story examines freedom, conflict, fear, and the cost of war."
+]
+},
+
+{
+title:"Fullmetal Alchemist: Brotherhood",
+year:2009,
+type:"TV",
+episodes:64,
+score:"9.10",
+genres:"Action · Adventure · Fantasy",
+image:"https://cdn.myanimelist.net/images/anime/1208/94745.jpg",
+synopsis:"Two brothers search for the Philosopher's Stone after a forbidden alchemy experiment leaves them with devastating losses.",
+facts:[
+"It adapts Hiromu Arakawa's manga more closely than the 2003 anime.",
+"The series was produced by studio Bones.",
+"Edward and Alphonse Elric are the central brothers.",
+"The story uses the principle of Equivalent Exchange as a core idea.",
+"It combines adventure with questions about sacrifice, family, and responsibility."
+]
+},
+
+{
+title:"Demon Slayer",
+year:2019,
+type:"TV",
+episodes:26,
+score:"8.45",
+genres:"Action · Fantasy",
+image:"https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+synopsis:"After demons destroy his family, Tanjiro joins the Demon Slayer Corps and searches for a way to save his sister.",
+facts:[
+"The original manga was written and illustrated by Koyoharu Gotouge.",
+"The anime adaptation is produced by studio ufotable.",
+"Tanjiro Kamado is the main protagonist.",
+"The story draws on a historical-fantasy version of Japan's Taisho era.",
+"Its action is built around distinct Breathing Styles."
+]
+},
+
+{
+title:"Hunter x Hunter",
+year:2011,
+type:"TV",
+episodes:148,
+score:"9.03",
+genres:"Action · Adventure · Fantasy",
+image:"https://cdn.myanimelist.net/images/anime/1337/99013.jpg",
+synopsis:"Young Gon Freecss sets out to become a Hunter and find the father he has never known.",
+facts:[
+"The manga was created by Yoshihiro Togashi.",
+"The 2011 adaptation was produced by Madhouse.",
+"Gon takes the Hunter Exam to begin his journey.",
+"The Nen system gives the series a detailed framework for abilities.",
+"The story shifts between adventure, strategy, and darker dramatic arcs."
+]
+},
+
+{
+title:"Steins;Gate",
+year:2011,
+type:"TV",
+episodes:24,
+score:"9.07",
+genres:"Sci-Fi · Suspense · Drama",
+image:"https://cdn.myanimelist.net/images/anime/5/73199.jpg",
+synopsis:"A self-proclaimed mad scientist and his friends discover that their experiments may allow messages to travel into the past.",
+facts:[
+"The anime is based on a visual novel developed by 5pb. and Nitroplus.",
+"The story is set primarily in Akihabara, Tokyo.",
+"Rintaro Okabe leads a small group of eccentric friends.",
+"The series explores time travel and branching timelines.",
+"Its early slice-of-life moments become important to its later suspense."
+]
+},
+
+{
+title:"Your Name.",
+year:2016,
+type:"Movie",
+episodes:1,
+score:"8.83",
+genres:"Romance · Supernatural · Drama",
+image:"https://cdn.myanimelist.net/images/anime/5/87048.jpg",
+synopsis:"Two teenagers who have never met begin mysteriously switching bodies and try to find each other across time and distance.",
+facts:[
+"The film was written and directed by Makoto Shinkai.",
+"Animation was produced by CoMix Wave Films.",
+"The Japanese title is Kimi no Na wa.",
+"The film features music by the Japanese band RADWIMPS.",
+"Its story connects romance, memory, distance, and a supernatural mystery."
+]
+},
+
+{
+title:"Violet Evergarden",
+year:2018,
+type:"TV",
+episodes:13,
+score:"8.67",
+genres:"Drama · Fantasy",
+image:"https://cdn.myanimelist.net/images/anime/1795/95088.jpg",
+synopsis:"A former child soldier becomes an Auto Memory Doll, writing letters for others as she tries to understand the meaning of love.",
+facts:[
+"The series is based on a light novel by Kana Akatsuki.",
+"Kyoto Animation produced the television adaptation.",
+"Violet works as an Auto Memory Doll, writing letters for clients.",
+"The story follows her emotional growth after the war.",
+"Its visual storytelling places strong emphasis on light, color, and detail."
+]
+},
+
+{
+title:"Spy x Family",
+year:2022,
+type:"TV",
+episodes:12,
+score:"8.50",
+genres:"Action · Comedy",
+image:"https://cdn.myanimelist.net/images/anime/1441/122795.jpg",
+synopsis:"A spy creates a pretend family for a mission, unaware that his new wife and daughter each have secrets of their own.",
+facts:[
+"The manga is written and illustrated by Tatsuya Endo.",
+"The anime is co-produced by Wit Studio and CloverWorks.",
+"Loid Forger is a spy known by the codename Twilight.",
+"Anya can read minds, while Yor secretly works as an assassin.",
+"The series blends espionage, family comedy, and action."
+]
+},
+
+{
+title:"Naruto",
+year:2002,
+type:"TV",
+episodes:220,
+score:"7.99",
+genres:"Action · Adventure",
+image:"https://cdn.myanimelist.net/images/anime/13/17405.jpg",
+synopsis:"An energetic young ninja dreams of becoming the leader of his village and earning the respect of those around him.",
+facts:[
+"The manga was created by Masashi Kishimoto.",
+"The original Naruto television series began in 2002.",
+"Naruto Uzumaki is the story's central character.",
+"The sequel series is titled Naruto: Shippuden.",
+"Friendship, perseverance, rivalry, and recognition are central themes."
+]
+},
+
+{
+title:"One Piece",
+year:1999,
+type:"TV",
+episodes:1000,
+score:"8.72",
+genres:"Action · Adventure · Fantasy",
+image:"https://cdn.myanimelist.net/images/anime/6/73245.jpg",
+synopsis:"Monkey D. Luffy and his crew sail the Grand Line in search of the legendary treasure known as the One Piece.",
+facts:[
+"The manga is written and illustrated by Eiichiro Oda.",
+"The television anime premiered in 1999.",
+"Luffy's dream is to become the King of the Pirates.",
+"The world is known for its many islands, crews, and mysteries.",
+"The story places strong emphasis on freedom and found family."
+]
+},
+
+{
+title:"Frieren: Beyond Journey's End",
+year:2023,
+type:"TV",
+episodes:28,
+score:"9.30",
+genres:"Adventure · Drama · Fantasy",
+image:"https://cdn.myanimelist.net/images/anime/1015/138006.jpg",
+synopsis:"After the hero's party defeats the Demon King, the elf mage Frieren begins a new journey to understand the people and moments she once took for granted.",
+facts:[
+"The manga is written by Kanehito Yamada and illustrated by Tsukasa Abe.",
+"The anime adaptation was produced by Madhouse.",
+"Frieren is an elf whose lifespan far exceeds that of humans.",
+"The story begins after the traditional fantasy quest has ended.",
+"Memory, time, friendship, and grief are central themes."
+]
+}
+
 ];
 
-function addFact(text, number) {
-  const item = document.createElement("div");
-  item.className = "fact";
+let lastIndex = -1;
 
-  const badge = document.createElement("div");
-  badge.className = "fact-number";
-  badge.textContent = String(number).padStart(2, "0");
+const $ = id => document.getElementById(id);
 
-  const content = document.createElement("div");
-  content.textContent = text;
+function render(anime, index) {
 
-  item.append(badge, content);
-  return item;
-}
+  lastIndex = index;
 
-function clean(value, fallback = "Not available") {
-  return value || fallback;
-}
+  $("title").textContent = anime.title;
+  $("type").textContent = anime.type.toUpperCase();
+  $("rating").textContent = "★ " + anime.score + " / 10";
 
-function uniqueFacts(items) {
-  return [...new Set(items.filter(Boolean))].slice(0, 5);
-}
+  $("poster").style.display = "block";
+  $("poster").src = anime.image;
+  $("poster").alt = anime.title + " cover";
 
-function makeFacts(anime) {
-  const genres = (anime.genres || []).map(x => x.name);
-  const studios = (anime.studios || []).map(x => x.name);
-  const themes = (anime.themes || []).map(x => x.name);
-  const demographics = (anime.demographics || []).map(x => x.name);
-
-  const facts = [
-    anime.source && anime.source !== "Unknown"
-      ? `The anime was adapted from ${anime.source.toLowerCase()} material.`
-      : null,
-
-    studios.length
-      ? `Animation was produced by ${studios.join(", ")}.`
-      : null,
-
-    anime.year
-      ? `Its original Japanese broadcast began in ${anime.year}.`
-      : null,
-
-    anime.season && anime.year
-      ? `It premiered in the ${anime.season} ${anime.year} anime season.`
-      : null,
-
-    anime.episodes
-      ? `The series has ${anime.episodes} episode${anime.episodes === 1 ? "" : "s"}.`
-      : null,
-
-    anime.duration && anime.duration !== "Unknown"
-      ? `Each episode runs for approximately ${anime.duration}.`
-      : null,
-
-    genres.length
-      ? `Its listed genres include ${genres.join(", ")}.`
-      : null,
-
-    themes.length
-      ? `Its themes include ${themes.join(", ")}.`
-      : null,
-
-    demographics.length
-      ? `Its listed demographic category is ${demographics.join(", ")}.`
-      : null,
-
-    anime.status
-      ? `Its current broadcast status is: ${anime.status.toLowerCase()}.`
-      : null,
-
-    anime.rating
-      ? `Its official content rating is ${anime.rating}.`
-      : null,
-
-    anime.score
-      ? `It has a MyAnimeList score of ${anime.score} out of 10.`
-      : null
-  ];
-
-  const result = uniqueFacts(facts);
-
-  for (const fact of fallbackFacts) {
-    if (result.length >= 5) break;
-    result.push(fact);
-  }
-
-  return result.slice(0, 5);
-}
-
-function setLoading(loading) {
-  $("discover").disabled = loading;
-  $("surprise").disabled = loading;
-  $("discover").textContent = loading
-    ? "Discovering..."
-    : "✦ Discover Another Anime";
-  $("status").textContent = loading
-    ? "Searching the anime universe..."
-    : "Powered by the Jikan anime database.";
-}
-
-function renderAnime(anime) {
-  currentAnime = anime;
-  lastAnimeId = anime.mal_id;
-
-  $("title").textContent = anime.title_english || anime.title;
-  $("type").textContent = anime.type || "ANIME";
-  $("rating").textContent = anime.score
-    ? `★ ${anime.score} / 10`
-    : "★ Not rated";
-
-  $("poster").src =
-    anime.images?.jpg?.large_image_url ||
-    anime.images?.jpg?.image_url ||
-    "https://placehold.co/600x800/171327/a78bfa?text=No+Cover";
-
-  $("poster").alt = `${anime.title} anime cover`;
+  $("poster").onerror = () => {
+    $("poster").style.display = "none";
+    $("poster").parentElement.style.background =
+      "linear-gradient(145deg,#b7e3ff,#eaf7ff)";
+  };
 
   $("meta").replaceChildren();
 
-  const fields = [
-    anime.year || anime.aired?.prop?.from?.year,
-    anime.episodes ? `${anime.episodes} Episodes` : null,
-    anime.status,
-    anime.genres?.slice(0, 3).map(g => g.name).join(" · ")
-  ].filter(Boolean);
-
-  fields.forEach(field => {
+  [
+    anime.year,
+    anime.episodes + " Episodes",
+    ...anime.genres.split(" · ")
+  ].forEach(value => {
     const span = document.createElement("span");
-    span.textContent = field;
-    $("meta").appendChild(span);
+    span.textContent = value;
+    $("meta").append(span);
   });
 
-  $("synopsis").textContent =
-    anime.synopsis?.replace(/\s*\[Written by MAL Rewrite\]\s*$/, "") ||
-    "A new story is waiting to be discovered.";
+  $("synopsis").textContent = anime.synopsis;
 
   $("facts").replaceChildren();
 
-  makeFacts(anime).forEach((fact, index) => {
-    $("facts").appendChild(addFact(fact, index + 1));
+  anime.facts.slice(0, 5).forEach((fact, i) => {
+
+    const row = document.createElement("div");
+    row.className = "fact";
+
+    const number = document.createElement("div");
+    number.className = "fact-number";
+    number.textContent = String(i + 1).padStart(2, "0");
+
+    const text = document.createElement("div");
+    text.textContent = fact;
+
+    row.append(number, text);
+    $("facts").append(row);
+
   });
 
-  $("status").textContent = "Your next anime adventure is ready.";
+  $("status").textContent =
+    "A new adventure, ready to explore.";
 }
 
-async function discoverAnime() {
-  const myRequest = ++requestNumber;
-  setLoading(true);
+function discover() {
 
-  try {
-    // Jikan provides a random anime from its database.
-    const response = await fetch(
-      "https://api.jikan.moe/v4/random/anime"
-    );
+  let index = Math.floor(Math.random() * animeList.length);
 
-    if (!response.ok) {
-      throw new Error("The anime database is temporarily unavailable.");
-    }
-
-    const result = await response.json();
-    const animeId = result.data?.mal_id;
-
-    if (!animeId) throw new Error("No anime was found.");
-
-    // Avoid showing the same anime twice in a row.
-    if (animeId === lastAnimeId) {
-      if (myRequest === requestNumber) {
-        setLoading(false);
-        discoverAnime();
-      }
-      return;
-    }
-
-    const detailsResponse = await fetch(
-      `https://api.jikan.moe/v4/anime/${animeId}/full`
-    );
-
-    if (!detailsResponse.ok) {
-      throw new Error("Could not load anime details.");
-    }
-
-    const details = await detailsResponse.json();
-
-    if (myRequest !== requestNumber) return;
-
-    renderAnime(details.data);
-  } catch (error) {
-    if (myRequest !== requestNumber) return;
-
-    $("status").textContent =
-      "Could not connect to the anime database. Please try again.";
-    console.error(error);
-  } finally {
-    if (myRequest === requestNumber) {
-      setLoading(false);
-    }
+  if (animeList.length > 1 && index === lastIndex) {
+    index = (index + 1 +
+      Math.floor(Math.random() * (animeList.length - 1))
+    ) % animeList.length;
   }
+
+  render(animeList[index], index);
 }
 
-$("discover").addEventListener("click", discoverAnime);
-$("surprise").addEventListener("click", discoverAnime);
+$("discover").addEventListener("click", discover);
+$("surprise").addEventListener("click", discover);
 
-// Load the first random anime when the page opens.
-discoverAnime();
+render(animeList[0], 0);
+
 </script>
+
 </body>
 </html>

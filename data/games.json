@@ -1,0 +1,24 @@
+[
+{"id":"games-001","title":"The Legend of Zelda: Breath of the Wild","year":2017,"category":"games","genres":["Action-Adventure","Open World"],"rating":9.7,"description":"Link wakes after a century-long sleep and explores a ruined Hyrule to defeat Calamity Ganon.","cover":"","facts":[
+"It launched on March 3, 2017, for both the Nintendo Switch and the Wii U.",
+"Hidemaro Fujibayashi directed it and Eiji Aonuma produced it.",
+"It won Game of the Year at The Game Awards 2017.",
+"Its physics and chemistry systems let fire spread across grass and metal conduct lightning.",
+"There are 900 hidden Korok seeds scattered across the map.",
+"It is the first mainline Zelda with fully voiced major cutscenes, and Zelda is voiced by Patricia Summersett.",
+"It was first revealed for the Wii U in 2013 and was delayed several times before launch.",
+"The world contains 120 shrines, each a short puzzle or combat challenge.",
+"Its sequel, Tears of the Kingdom, was released on May 12, 2023.",
+"The soundtrack leans on sparse, quiet piano instead of constant sweeping orchestral themes."]},
+{"id":"games-002","title":"Minecraft","year":2011,"category":"games","genres":["Sandbox","Survival"],"rating":9.3,"description":"A blocky open world where players gather resources, build structures and survive the night.","cover":"","facts":[
+"Markus 'Notch' Persson released early versions in 2009, and the full game launched on November 18, 2011.",
+"Microsoft bought Mojang, the studio behind it, in 2014 for about $2.5 billion.",
+"It is the best-selling video game of all time, with over 300 million copies sold.",
+"The Creeper came from a bug while Notch was trying to make a pig model.",
+"Daniel Rosenfeld, known as C418, composed the original soundtrack.",
+"An early development name for the game was 'Cave Game'.",
+"The first MineCon convention was held in Las Vegas in November 2011.",
+"Defeating the Ender Dragon triggers the credits, which include the 'End Poem' by Julian Gough.",
+"Jens 'Jeb' Bergensten took over as lead developer after Notch stepped back.",
+"A live-action Minecraft Movie arrived in 2025 and grossed more than $900 million."]}
+]
